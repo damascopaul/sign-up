@@ -1,8 +1,28 @@
 <template>
   <div class="app">
-    <SignUp/>
+    <SignUp
+      v-if="showSignUp"
+      @success="handleSuccess"
+    />
+
+    <CheckBig v-else/>
   </div>
 </template>
+
+<script lang="ts">
+export default {
+  data() {
+    return {
+      showSignUp: true,
+    }
+  },
+  methods: {
+    handleSuccess(): void {
+      this.showSignUp = false
+    },
+  },
+}
+</script>
 
 <style lang="postcss" scoped>
   @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap');
