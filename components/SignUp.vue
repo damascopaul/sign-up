@@ -35,6 +35,7 @@ import Joi from 'joi'
 import { FieldError } from '~/interfaces/fieldError'
 
 export default {
+  emits: ['success'],
   data() {
     return {
       email: '',
@@ -72,6 +73,7 @@ export default {
           this.errors = this.formatValidationErrors(error.details)
         } else {
           this.errors = []
+          this.$emit('success')
         }
         this.isProcessing = false
       }, 350)
