@@ -22,4 +22,5 @@ pnpm-debug.log*
 *.sw?
 
 .nuxt
+.output
 coverage
