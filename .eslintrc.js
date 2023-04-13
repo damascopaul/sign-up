@@ -14,6 +14,9 @@ module.exports = {
   },
   overrides: [
     {
+      env: {
+        jest: true,
+      },
       files: '*.vue',
       rules: {
         'vue/html-closing-bracket-spacing': ['error', {
